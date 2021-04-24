@@ -3,13 +3,13 @@
 require_once "classes/Compte.php";
 require_once "classes/Etudiant.php";
 //On instancie le compte
-$compte1 = new Compte("GOUEGUY",100);
-// $compte1->titulaire = "GOUEGUY";
-// $compte1->solde = 500;
-//On écrit dans la propriété solde
+$compte1 = new Compte("GOUEGUY",500);
+$compte1->setTitulaire("KONAN BEDIE");
+
 $compte1->deposer(100);
-$compte1->retirerMontant(1000);
-$compte1->retirerMOntant(5000);
+//On écrit dans la propriété solde
+// $compte1->retirerMontant(5000);
+// $compte1->retirerMontant(100);
 var_dump($compte1);
 $solde = $compte1->afficherSolde();
 var_dump($solde);
@@ -22,4 +22,9 @@ $etudiant = new Etudiant("M0123-45","GOUEGUY","JEAN-LOUIS","08-02-2000",560);
 $etudiant->payerInscription(400);
 $etudiant->payerInscription(400);
 echo $etudiant->getVersement();
-?>
+
+//PHP Orienté Objet - Visibilité (Nouvelle techno.FR)
+
+echo "Le taux d'intérêt du compte est : ". Compte::TAUX_INTERETS ."%";
+
+echo $compte1;

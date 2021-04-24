@@ -32,7 +32,7 @@ class Etudiant{
      */
     private $versement;
     /**
-     * Constructeur
+     * Constructeur du compte étudiant
      *
      * @param string $matricule
      * @param string $nom
