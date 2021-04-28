@@ -2,7 +2,7 @@
 /**
  * Classe Compte Bancaire
  */
-class Compte
+abstract class Compte
 {
     //Propriétés
     /**
@@ -16,11 +16,7 @@ class Compte
      *
      * @var float
      */
-    private $solde;
-
-    //Constantes
-    const TAUX_INTERETS = 5;
-
+    protected $solde;
     /**
      * Constructeur du compte bancaire
      *
@@ -32,7 +28,7 @@ class Compte
     {
         //on attribue le nom à la propriété titulaire de l'instance créee
         $this->titulaire = $nom;
-        $this->solde = $montant + ($montant * self::TAUX_INTERETS/100);
+        $this->solde = $montant;
        //on attribue le montant à la propriété solde de l'instance créee
        
     }
@@ -130,13 +126,6 @@ class Compte
             echo "Montant invalide ou solde insuffisant";
         }
         //echo $this->decouvert();
-    }
-    private function decouvert(){
-        if($this->solde < 0){
-            return "Vous êtes à découvert ! Attention";
-        }else{
-            return "Vous n'êtes pas à découvert";
-        }
     }
     /**
      * Retourner une chaine de caractère affichant le solde
